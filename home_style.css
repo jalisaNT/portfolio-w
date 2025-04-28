@@ -1,0 +1,438 @@
+/*understanding of format FOR ME*/
+
+button{
+  text-align: none;
+  justify-content: none;
+}
+
+/* Navigation  */
+
+#homepage{
+  position: absolute;
+  color: #000;
+  text-decoration: none;
+}
+
+.nav-toggle {
+  font-size: 1rem;
+  color: #000;
+  background: transparent;
+  border-color: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  float: right;
+  display: none;
+  
+}
+
+.nav-toggle:hover {
+  transform: rotate(90deg);
+}
+
+nav, .custom-navbar {
+ 
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  width: 100%;
+  padding: 30px;
+}
+
+.custom-navbar{
+  align-items: center; /* This aligns ALL children vertically */
+}
+
+
+
+/* Fade-out animation */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+
+.top-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+ul li {
+  display: inline-block;
+  margin: 20px;
+}
+
+.top-links a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 200;
+  font-size: 25px;
+  padding: 10px;
+  display: block;
+}
+
+/* Section Styling */
+.section {
+  width: 100%;
+  min-height: 1000px;
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+/* Landing page */
+.home-title {
+  font-weight: 600;
+  font-size: 100px;
+  position: relative;
+  padding-top: 20vh;
+  margin-left: 20px;
+}
+
+#below-title {
+  position: relative;
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+#intro_ani {
+  height: 50px;
+  width: 50px;
+  background-color: #555;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Short intro */
+#intro-txt {
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 1.8;
+  float: right;
+  max-width: 40%;
+  margin-top: 200px;
+  margin-right: 50px;
+}
+
+
+#description {
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+/* Some Work section */
+.container h2 {
+  margin-top: 50px;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+h2 {
+  margin-top: 50px;
+  font-size: 40px;
+  font-weight: 500;
+  padding: 20px;
+}
+
+
+/* Work Section */
+#work-section {
+  margin: auto;
+  padding: 50px;
+  /* border: 2px dotted rgb(51, 86, 45);*/
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates 2 columns of equal width */
+  grid-template-rows: repeat(2, auto); /* Creates 2 rows that size to content */
+  gap: 30px; /* Space between grid items */
+  width: 100%;
+
+}
+
+
+
+button.row {
+  /* Reset button styles */
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  
+  text-align: left;
+
+
+
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  /*border: 2px dotted rgb(51, 86, 45); */
+  padding: 20px;
+  /* Reset any Bootstrap row margins */
+  width: 100%;
+
+  transition: transform 0.2s ease;
+}
+
+
+button.row .side a {
+  position: relative;
+  display: inline-block;
+}
+
+button.row .side a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: rgb(51, 86, 45); /* Same as your #line color */
+  transition: width 0.3s ease;
+}
+
+/* Trigger the animation on hover of the entire button */
+button.row:hover .side a::after {
+  width: 100%;
+}
+
+/* Optional: add a subtle scale effect on hover for better feedback */
+button.row:hover {
+  transform: translateY(-2px);
+}
+
+
+a{
+  font-weight: 600;
+}
+
+
+#work-img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 20px; /* Space between image and text */
+  margin-right: 0; /* Remove side margin */
+}
+ 
+#work-img-dating{
+  width: 75%;
+}
+
+
+.side {
+  /* Force this to be inline with the image */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: flex-start;
+  
+}
+
+.side p {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  margin-top: 2%;
+  font-weight: 100;
+}
+
+
+
+
+
+#line {
+  height: 2px;
+  width: 100%;
+  background-color: rgb(51, 86, 45);
+  margin-top: 20px;
+}
+
+
+/* Footer */
+#M-contacts {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  
+}
+
+i {
+  font-size: 30px;
+  padding: 10px;
+  cursor: pointer;
+  color: #000;
+}
+
+i:hover {
+  opacity: 0.7;
+}
+
+footer {
+  background-color: #c2bfbf;
+  padding: 20px 0;
+}
+
+#footer_txt {
+  margin-right: 20px;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 1300px) {
+ 
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 1200px) {
+
+  #homepage{
+    position: relative;
+  }
+  .home-title {
+    font-size: 60px;
+    padding-top: 15vh;
+  }
+  
+  #below-title {
+    font-size: 30px;
+  }
+
+  #intro-txt {
+    width: 100%;
+    font-size: 25px;
+    margin: auto;
+    float: none;
+    max-width: 90%;
+    margin-top: 100px;
+    line-height: 1.6;
+  }
+
+  .top-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    z-index: 100;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .custom-navbar {
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+
+  /* Navigation Bar */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  .show-links {
+    height: auto;
+    padding-bottom: 10px;
+  }
+
+  .top-links a {
+    color: #333;
+    font-size: 20px;
+    display: block;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+ 
+  .top-links a:hover {
+    background-color: #ffe2e2;
+    padding-left: 1.5rem;
+  }
+
+  ul li {
+    margin: 0;
+    display: block;
+  }
+  
+  /* Add padding at the top to account for fixed navbar */
+  .section:first-of-type {
+    padding-top: 80px;
+  }
+
+  .section{
+    min-height: 1050px;
+  }
+
+  #work-section {
+    grid-template-columns: 1fr; /* Switch to single column on smaller screens */
+  }
+
+  #work-img-dating{
+    width: 100%;
+  }
+
+  #description {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home-title {
+    font-size: 40px;
+    position: absolute;
+    bottom: 50px;
+  }
+  #below-title {
+    font-size: 34px;
+  }
+  
+  #intro_ani {
+    width: 30px;
+    height: 30px;
+  }
+  
+  #M-contacts {
+    flex-direction:row;
+  }
+  
+  #footer_txt {
+    margin-bottom: 15px;
+    margin-right: 10px;
+  }
+}
+
+
+/* Updated */
