@@ -1,4 +1,4 @@
-/*const nav_section = document.querySelector(".container-fluid");
+const nav_section = document.querySelector(".container-fluid");
 const navToggle = document.querySelector(".nav-toggle");
 
 console.log(nav_section);
@@ -9,8 +9,25 @@ navToggle.addEventListener("click",function(){
   links.classList.toggle("show-links")
   
 })
-  
 
+//Homepage link fade in and out animation
+const homepageLink = document.getElementById("homepage");
+homepageLink.addEventListener("click", function (e) {
+  e.preventDefault(); // Stop default jump
+    
+  document.body.classList.add("fade-out");
+    
+  setTimeout(() => {
+    window.location.href = this.href; 
+  }, 500); 
+});
+ScrollReveal().reveal('.container', { delay: 300 });
+ScrollReveal().reveal(".row", {
+  duration: 1000,
+  scale: 0.85
+});
+  
+/*
 ULTILISE WORK WORK SECTION:  const observer = new IntersectionObserver(entries =>{
   
       console.log(entries);
@@ -19,7 +36,7 @@ ULTILISE WORK WORK SECTION:  const observer = new IntersectionObserver(entries =
 
     observer.observe(txt[1]);
 
-*/
+
 
 $(function(){
   $(".container-fluid").load("shorthands/index.html", function() { // Load the js nav into before running html
@@ -34,25 +51,12 @@ $(function(){
       links.classList.toggle("show-links")
     })
 
-    //Homepage link fade in and out animation
-    const homepageLink = document.getElementById("homepage");
     
-        homepageLink.addEventListener("click", function (e) {
-          e.preventDefault(); // Stop default jump
-    
-          document.body.classList.add("fade-out");
-    
-          setTimeout(() => {
-            window.location.href = this.href; // Continue navigation
-          }, 500); // Match the transition time in CSS
-        });
 
-    ScrollReveal().reveal('.container', { delay: 300 });
-    ScrollReveal().reveal(".row", {
-       duration: 1000,
-       scale: 0.85
-     });
+  });
+});
 
+*/
 
     /* NOT WORKING CURRENTLY
     const observer = new IntersectionObserver(entries =>{
@@ -70,6 +74,3 @@ $(function(){
       observer.observe(each_text);
     });
     */
-
-  });
-});
