@@ -1,5 +1,5 @@
 $(function(){
-  $(".container-fluid").load("../shorthands/nav.html", function() {
+  $(".container-fluid").load("../shorthands/index.html", function() {
 
     //Define
     const links = document.querySelector(".top-links");

@@ -22,7 +22,7 @@ ULTILISE WORK WORK SECTION:  const observer = new IntersectionObserver(entries =
 */
 
 $(function(){
-  $(".container-fluid").load("shorthands/nav.html", function() { // Load the js nav into before running html
+  $(".container-fluid").load("shorthands/index.html", function() { // Load the js nav into before running html
 
     //Define
     const links = document.querySelector(".top-links");
