@@ -1,3 +1,5 @@
+//Fix later : when swipe and mail app is open no longer open email. want email to display alwys despit app being open, cuurently opens link to app
+
 $(function(){
   $(".container-fluid").load("../shorthands/index.html", function() {
 

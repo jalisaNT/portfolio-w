@@ -98,6 +98,7 @@
   flex-direction: column;
   justify-content: flex-start;
   box-shadow: 0 0 25px 15px rgb(232, 230, 230);
+  margin-bottom: 100px;
 }
 
 .swipe-effect {
