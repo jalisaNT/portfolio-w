@@ -30,13 +30,13 @@ button{
 }
 
 nav, .custom-navbar {
- 
   margin: 0;
   display: flex;
   align-items: center;
   justify-content:space-between;
   width: 100%;
   padding: 30px;
+  
 }
 
 .custom-navbar{
@@ -298,9 +298,6 @@ footer {
   font-weight: 400;
 }
 
-@media only screen and (max-width: 1300px) {
- 
-}
 
 /* Responsive Design */
 @media only screen and (max-width: 1200px) {
@@ -349,12 +346,12 @@ footer {
 
   .custom-navbar {
     margin-bottom: 20px;
-    padding: 20px;
+    
   }
 
   /* Navigation Bar */
   nav {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -389,7 +386,7 @@ footer {
   
   /* Add padding at the top to account for fixed navbar */
   .section:first-of-type {
-    padding-top: 80px;
+    padding-top: 40px;
   }
 
   .section{
@@ -412,8 +409,8 @@ footer {
 @media only screen and (max-width: 768px) {
   .home-title {
     font-size: 40px;
-    position: absolute;
-    bottom: 50px;
+    position: relative;
+   top: 12em;
   }
   #below-title {
     font-size: 34px;
