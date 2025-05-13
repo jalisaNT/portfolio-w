@@ -106,14 +106,16 @@ ul li {
   font-weight: 400;
 }
 
-#intro_ani {
-  height: 50px;
-  width: 50px;
-  background-color: #555;
-  position: absolute;
+#intro_ani canvas{
+  position: relative;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 50%;  
+  transform: translate(0%, -50%); 
+
+  flex: 1;
+  min-width: 200px;
+  height: auto;
+  
 }
 
 /* Short intro */
@@ -325,6 +327,20 @@ footer {
     line-height: 1.6;
   }
 
+  #intro_ani {
+    order: -1; /* Pushes the model above the text */
+    width: 80%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  #intro_ani canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 400px;
+    margin: auto;
+  }
+
   .top-links {
     position: absolute;
     top: 100%;
@@ -418,9 +434,14 @@ footer {
   }
   
   #intro_ani {
-    width: 30px;
+    width: 80%;
     height: 30px;
+    translate: -40%;
   }
+
+ 
+
+  
   
   #M-contacts {
     flex-direction:row;

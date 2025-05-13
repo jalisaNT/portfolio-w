@@ -21,12 +21,13 @@ homepageLink.addEventListener("click", function (e) {
     window.location.href = this.href; 
   }, 500); 
 });
-ScrollReveal().reveal('.container', { delay: 300 });
+ScrollReveal().reveal('.container', { delay: 100 });
 ScrollReveal().reveal(".row", {
   duration: 1000,
   scale: 0.85
 });
-  
+
+
 /*
 ULTILISE WORK WORK SECTION:  const observer = new IntersectionObserver(entries =>{
   

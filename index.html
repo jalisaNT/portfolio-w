@@ -12,8 +12,21 @@
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://unpkg.com/scrollreveal@4"></script>
   <title>Portfolio</title>
+  <!--THREJS-->
+  <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "https://threejs.org/build/three.module.js",
+					"three/addons/": "https://threejs.org/examples/jsm/"
+				}
+			}
+		</script>
+  
 </head>
 <body>
+  
   <!--LANDING PAGE-->
   <section class="section">
     <!--Navigate-->
@@ -49,7 +62,10 @@
         </div>
     </div>
     
-    <article class="container" id="intro_ani"></article>
+    <article class="container">
+      <div id="intro_ani"><script type="module" src="three_d.js"></script></div>
+     <!--PROBLEM THREEJS DISPLAYS AT BOTTOM OF PAGE ALWAYS :  --> 
+    </article>
   </section>
 
   <!--Short Intro-->
@@ -83,7 +99,7 @@
    </button>
   </article>
     
- 
+  
 </body>
 
 <footer>
@@ -97,5 +113,4 @@
   </article>
 </footer>
 <script src="home_main.js"></script>
-
 </html>
