@@ -30,6 +30,8 @@ button{
   transform: rotate(90deg);
 }
 
+
+
 nav, .custom-navbar {
   margin: 0;
   display: flex;
@@ -451,7 +453,13 @@ footer {
     margin-bottom: 15px;
     margin-right: 10px;
   }
+
+  .nav-toggle:active{
+    transform: rotate(90deg);
+  }
 }
+
+
 
 
 /* Updated */
