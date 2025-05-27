@@ -31,6 +31,15 @@ button{
 }
 
 
+.nav-toggle:active{
+  transform: rotate(90deg);
+}
+
+.nav-toggle:visited{
+  transform: rotate(0deg);
+}
+
+
 
 nav, .custom-navbar {
   margin: 0;
@@ -441,10 +450,6 @@ footer {
     translate: -40%;
   }
 
- 
-
-  
-  
   #M-contacts {
     flex-direction:row;
   }
@@ -454,9 +459,6 @@ footer {
     margin-right: 10px;
   }
 
-  .nav-toggle:active{
-    transform: rotate(90deg);
-  }
 }
 
 
