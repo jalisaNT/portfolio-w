@@ -28,7 +28,9 @@ h1{
 }
 
 
-@media screen and (max-width){
-
+@media screen and (max-width : 768px){
+  .col-10 {
+    grid-template-columns: 1fr; 
+  }
   
 }
