@@ -31,6 +31,7 @@ h1{
 @media screen and (max-width : 768px){
   .col-10 {
     grid-template-columns: 1fr; 
+    min-width: 300px;
   }
   
 }
