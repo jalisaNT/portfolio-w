@@ -26,17 +26,20 @@ button{
   
 }
 
-.nav-toggle:hover {
-  transform: rotate(90deg);
-}
-
-
-.nav-toggle:active{
-  transform: rotate(90deg);
-}
-
-.nav-toggle:visited{
-  transform: rotate(0deg);
+/*Fixing toggel for smaller screens so the hover button doesnt impact on mobile phones   */
+@media only screen and (min-width: 650px ){
+  .nav-toggle:hover {
+    transform: rotate(90deg);
+  }
+  
+  .nav-toggle:active{
+    transform: rotate(90deg);
+  }
+  
+  .nav-toggle:visited{
+    transform: rotate(0deg);
+  }
+  
 }
 
 
@@ -445,7 +448,7 @@ footer {
   }
   
   #intro_ani {
-    width: 80%;
+    width: 90%;
     height: 30px;
     translate: -40%;
   }

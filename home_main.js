@@ -2,6 +2,7 @@ const nav_section = document.querySelector(".container-fluid");
 const navToggle = document.querySelector(".nav-toggle");
 
 console.log(nav_section);
+console.log(window.innerWidth);
 const links = document.querySelector(".top-links");
 console.log(links);
 navToggle.addEventListener("click",function(){

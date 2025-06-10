@@ -19,8 +19,11 @@ document.getElementById('intro_ani').appendChild(renderer.domElement);
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-camera.position.set(3, 3, 6);
+camera.position.set(4, 2, 10);
 camera.lookAt(0,0,0);
+
+
+
 
 // const groundGeometry = new THREE.PlaneGeometry(8,8,32,32);
 // groundGeometry.rotateX(-Math.PI/2) // Sit vertically
@@ -55,8 +58,6 @@ loader.load('version.glb', async function (gltf)  {
   action.play();
   }
 
-
-
   
 }) 
 
@@ -84,8 +85,8 @@ renderer.setAnimationLoop(animate)
 
 
 //resize 
-// window.addEventListener("resize",function(){
-//   camera.aspect = window.innerWidth / window.innerHeight;
-//   camera.updateProjectionMatrix();
-//   renderer.setSize(window.innerWidth, window.innerHeight)
-// })
+window.addEventListener("resize",function(){
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth/2, window.innerHeight/2)
+})
