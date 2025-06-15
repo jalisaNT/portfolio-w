@@ -1,5 +1,5 @@
 const nav_section = document.querySelector(".container-fluid");
-const navToggle = document.querySelector(".nav-toggle");
+const navToggle = document.getElementById("check");
 
 console.log(nav_section);
 console.log(window.innerWidth);

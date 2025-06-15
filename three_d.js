@@ -8,7 +8,7 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 
 
 renderer.outputColorSpace = THREE.SRGBColorSpace;  // tends be default of models colorspacing
-renderer.setSize(window.innerWidth/2, window.innerHeight/2);
+renderer.setSize(window.innerWidth/1.5, window.innerHeight/1.5);
 renderer.toneMapping = 0;
 renderer.toneMappingExposure = 1;
 renderer.toneMapping = THREE.NoToneMapping;
@@ -19,10 +19,10 @@ document.getElementById('intro_ani').appendChild(renderer.domElement);
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-camera.position.set(4, 2, 10);
+camera.position.set(5, 2, 16);
 camera.lookAt(0,0,0);
 
-
+// if view port is on a mobile 
 
 
 // const groundGeometry = new THREE.PlaneGeometry(8,8,32,32);
@@ -47,6 +47,7 @@ loader.load('version.glb', async function (gltf)  {
   //model
   const mesh = gltf.scene;
   mesh.position.set(0,-2,0);
+  mesh.scale.set(1.1,1.5,1.5);  /*NoteToSelf:  potentially change when add animation landing page actaul one */
   scene.add(mesh);
 
   if (mesh){

@@ -11,6 +11,7 @@ button{
   position: absolute;
   color: #000;
   text-decoration: none;
+  
 }
 
 .nav-toggle {
@@ -26,31 +27,13 @@ button{
   
 }
 
-/*Fixing toggel for smaller screens so the hover button doesnt impact on mobile phones   */
-@media only screen and (min-width: 650px ){
-  .nav-toggle:hover {
-    transform: rotate(90deg);
-  }
-  
-  .nav-toggle:active{
-    transform: rotate(90deg);
-  }
-  
-  .nav-toggle:visited{
-    transform: rotate(0deg);
-  }
-  
-}
-
-
-
 nav, .custom-navbar {
   margin: 0;
   display: flex;
   align-items: center;
   justify-content:space-between;
   width: 100%;
-  padding: 30px;
+  padding: 30px; 
   
 }
 
@@ -293,7 +276,7 @@ a{
   
 }
 
-i {
+i, label{
   font-size: 30px;
   padding: 10px;
   cursor: pointer;
@@ -315,6 +298,23 @@ footer {
   font-weight: 400;
 }
 
+/* when the window gets smaller stop the hover animation */ 
+/*Fixing toggel for smaller screens so the hover button doesnt impact on mobile phones   */
+@media only screen and (min-width: 650px ){
+  .nav-toggle:hover {
+    transform: rotate(90deg);
+  }
+  
+  .nav-toggle:active{
+    transform: rotate(90deg);
+  }
+  
+  .nav-toggle:visited{
+    transform: rotate(0deg);
+  }
+  
+}
+
 
 /* Responsive Design */
 @media only screen and (max-width: 1200px) {
@@ -324,7 +324,7 @@ footer {
   }
   .home-title {
     font-size: 60px;
-    padding-top: 15vh;
+    padding-top: 25vh;
   }
   
   #below-title {
@@ -351,9 +351,11 @@ footer {
   #intro_ani canvas {
     width: 100% !important;
     height: auto !important;
-    max-width: 400px;
+    max-width: 450px;
     margin: auto;
   }
+
+ 
 
   .top-links {
     position: absolute;
@@ -375,6 +377,11 @@ footer {
     display: block;
   }
 
+  .navbar{
+    position: fixed;
+    
+  }
+
   .custom-navbar {
     margin-bottom: 20px;
     
@@ -389,6 +396,19 @@ footer {
     background: #fff;
     box-shadow: 0px 3px 5px rgba(0,0,0,0.1);
     z-index: 1000;
+    
+  }
+
+  .navbar {
+    background-color: white;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    
   }
 
   .show-links {
@@ -417,11 +437,11 @@ footer {
   
   /* Add padding at the top to account for fixed navbar */
   .section:first-of-type {
-    padding-top: 40px;
+    padding-top: 100px;
   }
 
   .section{
-    min-height: 1050px;
+    min-height: 1000px; /*1050*/
   }
 
   #work-section {
@@ -450,7 +470,7 @@ footer {
   #intro_ani {
     width: 90%;
     height: 30px;
-    translate: -40%;
+    translate: -45%;
   }
 
   #M-contacts {
@@ -468,3 +488,65 @@ footer {
 
 
 /* Updated */
+
+
+label{
+  display:flex;
+   flex-direction:column;
+   width:70px;
+   cursor:pointer;
+   scale: 0.7;
+ }
+ 
+ label span{
+   background: #000000;
+   border-radius:10px;
+   height:5px;
+   margin: 7px 0;
+   transition: .4s  cubic-bezier(0.38, -0.1, 0.32, 1);
+ 
+ }
+ 
+ 
+ span:nth-of-type(1){
+   width:50%;
+   
+ }
+ 
+ span:nth-of-type(2){
+   width:100%;
+ }
+ 
+ 
+ span:nth-of-type(3){
+   width:75%;
+  
+ }
+ 
+ 
+ input[type="checkbox"]{
+   display:none;
+ }
+ 
+ 
+ input[type="checkbox"]:checked ~ span:nth-of-type(1){
+   transform-origin:bottom;
+   transform:rotatez(45deg) translate(8px,0px)
+ }
+ 
+ 
+ input[type="checkbox"]:checked ~ span:nth-of-type(2){
+   
+   transform-origin:top;
+   transform:rotatez(-45deg)
+ }
+ 
+ 
+ input[type="checkbox"]:checked ~ span:nth-of-type(3){
+   
+   transform-origin:bottom;
+   width:50%;
+   transform: translate(30px,-11px) rotatez(45deg);
+ 
+ }
+ 
