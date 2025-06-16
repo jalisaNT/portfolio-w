@@ -447,6 +447,7 @@ footer {
 
   #work-section {
     grid-template-columns: 1fr; /* Switch to single column on smaller screens */
+    width: 100%;
   }
 
   #work-img-dating{
