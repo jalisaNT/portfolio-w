@@ -495,7 +495,8 @@ label{
    flex-direction:column;
    width:70px;
    cursor:pointer;
-   scale: 0.7;
+   scale: 0.55;
+   margin-right: -30px;
  }
  
  label span{
