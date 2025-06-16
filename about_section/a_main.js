@@ -5,7 +5,7 @@ $(function(){
 
     //Define
     const links = document.querySelector(".top-links");
-    const navToggle = document.querySelector(".nav-toggle");
+    const navToggle = document.getElementById("check");
     const placement = document.querySelector(".container-fluid");
     const left_button = document.getElementById("left-btn");
     const right_button = document.getElementById("right-btn");

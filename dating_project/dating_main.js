@@ -3,7 +3,7 @@ $(function(){
 
     //Define
     const links = document.querySelector(".top-links");
-    const navToggle = document.querySelector(".nav-toggle");
+    const navToggle = document.getElementById("check");
 
     navToggle.addEventListener("click",function(){
       links.classList.toggle("show-links")
