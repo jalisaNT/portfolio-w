@@ -7,6 +7,8 @@ $(function(){
     const links = document.querySelector(".top-links");
     const navToggle = document.querySelector(".nav-toggle");
     const placement = document.querySelector(".container-fluid");
+    const left_button = document.getElementById("left-btn");
+    const right_button = document.getElementById("right-btn");
     let profile_card = document.querySelector(".card");
 
     navToggle.addEventListener("click",function(){
@@ -115,12 +117,12 @@ $(function(){
       //Btn controls
       $('.js-left-trigger').off('click').on('click', function(event) { //Detach event listeners no doubles on click events . Remove click handle before add new ones
         var $topCard= $('.swipe-effect').last();
-        open_email("You thought you had a choice ... Get in Touch Still")
+        open_email("You thought you had a choice ... Get in Touch Still");
         swipeEnded(event, 'left', $topCard);
       });
       $('.js-right-trigger').off('click').on('click', function(event) {
         var $topCard = $('.swipe-effect').last();
-        open_email("Get in Touch")
+        open_email("Get in Touch");
         swipeEnded(event, 'right', $topCard);
       });
     };
