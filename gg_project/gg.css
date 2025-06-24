@@ -42,7 +42,7 @@
   color: #333;
 }
 
-/* Container for each feature section with image and text */
+
 .feature-section {
   display: flex;
   align-items: flex-start;
@@ -54,17 +54,17 @@
  
 }
 
-/* Alternate layout - image on right for every other section */
+
 .feature-section:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-/* Image slot container - Mobile app mockup style */
+
 .image-slot {
-  flex: 0 0 200px; /* Mobile phone width */
-  height: 400px; /* Mobile phone height (2:1 ratio) */
+  flex: 0 0 200px; 
+  height: 400px; 
   
-  border-radius: 25px; /* Rounded corners like a phone */
+  border-radius: 25px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,7 +74,7 @@
  
 }
 
-/* Placeholder text in image slot */
+
 .image-slot::before {
   content: "Mobile App Screenshot";
   
@@ -84,23 +84,23 @@
   padding: 0 1rem;
 }
 
-/* When image is added, hide placeholder text */
+
 .image-slot img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Changed from cover to contain to show full app screenshot */
-  border-radius: 22px; /* Slightly smaller radius to fit inside phone bezel */
-  background:#F2F1E9; /* White background for app screenshots */
+  object-fit: contain; 
+  border-radius: 22px; 
+  background:#F2F1E9; 
 }
 
 .image-slot:has(img)::before {
   display: none;
 }
 
-/* Text content area */
+
 .text-content {
   flex: 1;
-  min-width: 0; /* Allows text to wrap properly */
+  min-width: 0; 
 }
 
 #photo {
@@ -117,7 +117,7 @@
   margin-bottom: 0.5rem;
 }
 
-/* Style the lists */
+
 .text-content ul {
   margin: 1rem 0;
   padding-left: 0;
@@ -168,7 +168,7 @@
   border-radius: 2px;
 }
 
-/* Personas Container */
+
 .personas-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -176,7 +176,7 @@
   margin-bottom: 2rem;
 }
 
-/* Individual Persona Card */
+/*single*/
 .persona-card {
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   border-radius: 16px;
@@ -200,7 +200,7 @@
 
 
 
-/* Persona Header */
+
 .persona-header {
   display: flex;
   align-items: center;
@@ -252,7 +252,7 @@
   font-style: italic;
 }
 
-/* Persona Content */
+
 .persona-content {
   margin-bottom: 1.5rem;
 }
@@ -264,7 +264,7 @@
   margin-bottom: 1.5rem;
 }
 
-/* Benefits Section */
+
 .persona-benefits {
   background: #f0f8ff;
   border-radius: 12px;
@@ -296,7 +296,7 @@
 
 
 
-/* Responsive design */
+
 @media (max-width: 768px) {
     .feature-section,
   .feature-section:nth-child(even) {
@@ -307,7 +307,7 @@
   .image-slot {
     flex: none;
     width: 180px; /* Smaller mobile width */
-    height: 320px; /* Proportional height */
+    height: 320px; 
     align-self: center;
   }
   
@@ -345,7 +345,7 @@
 
 @media (max-width: 480px) {
     .image-slot {
-    width: 160px; /* Even smaller for very small screens */
+    width: 160px; 
     height: 280px;
   }
   
