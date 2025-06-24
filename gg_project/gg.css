@@ -1,0 +1,370 @@
+@import url(../r&r_project/R&R_style.css);
+
+#tools, #time, #category{
+  color: rgb(72, 90, 211)
+}
+
+.intro-container{
+  border: 2px dotted rgb(72, 90, 211);
+}
+
+#article-imgs{
+  width: 400px;
+  height: auto;
+}
+
+#txt{
+  margin-left: 5px;
+}
+
+
+@media screen and (max-width: 1200px) {
+  #article-imgs{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+
+
+#r-explain {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+#r-explain h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Container for each feature section with image and text */
+.feature-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+ 
+ 
+}
+
+/* Alternate layout - image on right for every other section */
+.feature-section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Image slot container - Mobile app mockup style */
+.image-slot {
+  flex: 0 0 200px; /* Mobile phone width */
+  height: 400px; /* Mobile phone height (2:1 ratio) */
+  
+  border-radius: 25px; /* Rounded corners like a phone */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  position: relative;
+  overflow: hidden;
+ 
+}
+
+/* Placeholder text in image slot */
+.image-slot::before {
+  content: "Mobile App Screenshot";
+  
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* When image is added, hide placeholder text */
+.image-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Changed from cover to contain to show full app screenshot */
+  border-radius: 22px; /* Slightly smaller radius to fit inside phone bezel */
+  background:#F2F1E9; /* White background for app screenshots */
+}
+
+.image-slot:has(img)::before {
+  display: none;
+}
+
+/* Text content area */
+.text-content {
+  flex: 1;
+  min-width: 0; /* Allows text to wrap properly */
+}
+
+#photo {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #333;
+}
+
+#photo b {
+  color: #2c5aa0;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Style the lists */
+.text-content ul {
+  margin: 1rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.text-content li {
+  margin-bottom: 0.8rem;
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.5;
+  color: #555;
+}
+
+.text-content li::before {
+  content: "→";
+  color: #2c5aa0;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.personas-section {
+  max-width: 1400px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  background: #ffffff;
+  border-radius: 20px;
+  
+}
+
+.personas-section h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #2c5aa0;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.personas-section h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #2c5aa0, #4a90e2);
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+/* Personas Container */
+.personas-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Individual Persona Card */
+.persona-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.persona-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #2c5aa0, #4a90e2, #6c5ce7);
+}
+
+
+
+/* Persona Header */
+.persona-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.persona-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2c5aa0, #4a90e2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
+}
+
+.persona-basic-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c5aa0;
+  margin-bottom: 0.5rem;
+}
+
+.persona-demographics {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.demo-tag {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.persona-location {
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Persona Content */
+.persona-content {
+  margin-bottom: 1.5rem;
+}
+
+.persona-story {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Benefits Section */
+.persona-benefits {
+  background: #f0f8ff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border-left: 4px solid #2c5aa0;
+}
+
+.persona-benefits h4 {
+  color: #2c5aa0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.persona-benefits h4::before {
+  content: "✨";
+  font-size: 1.2rem;
+}
+
+.persona-benefits p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+}
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .feature-section,
+  .feature-section:nth-child(even) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .image-slot {
+    flex: none;
+    width: 180px; /* Smaller mobile width */
+    height: 320px; /* Proportional height */
+    align-self: center;
+  }
+  
+  #r-explain {
+    padding: 1rem;
+  }
+
+  .personas-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .persona-card {
+    padding: 1.5rem;
+  }
+  
+  .persona-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .persona-demographics {
+    justify-content: center;
+  }
+  
+  .personas-section {
+    padding: 2rem 1rem;
+  }
+  
+  .personas-section h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+    .image-slot {
+    width: 160px; /* Even smaller for very small screens */
+    height: 280px;
+  }
+  
+  #photo b {
+    font-size: 1rem;
+  }
+
+  .persona-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 1.4rem;
+  }
+  
+  .persona-basic-info h3 {
+    font-size: 1.3rem;
+  }
+  
+  .demo-tag {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+  }
+}
