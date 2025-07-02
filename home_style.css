@@ -350,7 +350,7 @@ footer {
   }
 
   #intro_ani canvas {
-    width: 100% !important;
+    width: 70% !important;
     height: auto !important;
     max-width: 450px;
     margin: auto;
@@ -474,7 +474,7 @@ footer {
   
   #intro_ani {
     width: 90%;
-    height: 30px;
+    height: 20px;
     translate: -45%;
   }
 
