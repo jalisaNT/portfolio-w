@@ -212,9 +212,9 @@
   }
   
   .organisation {
-    position:absolute;
-    bottom: -285px;
+    position:static;
     left: 0;
+    top: 70px;
     width: 100%;
     padding: 0 20px;
     z-index: 4;
