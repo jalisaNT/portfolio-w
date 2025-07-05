@@ -106,54 +106,90 @@ $(function(){
           //Add hammer events on element
           hammertime = new Hammer(element);
 
-          // Configure Hammer.js to be less sensitive to small movements
+           // Configure Hammer.js to be less sensitive and only respond to horizontal movements
         hammertime.get('pan').set({
           direction: Hammer.DIRECTION_HORIZONTAL,
-          threshold: minPanDistance, // Minimum distance before pan starts
-          velocity: 0.1 // Minimum velocity
+          threshold: 30, // Increased threshold - more distance needed before pan starts
+          velocity: 0.2 // Minimum velocity
         });
         
         hammertime.get('swipe').set({
           direction: Hammer.DIRECTION_HORIZONTAL,
-          threshold: 50, // Minimum distance for swipe
-          velocity: 0.3 // Minimum velocity for swipe
+          threshold: 60, // Increased threshold for swipe
+          velocity: 0.4 // Higher velocity requirement for swipe
         });
         
-        //Mobile gestures
-        hammertime.on('panleft', function(event) {
-          if (Math.abs(event.deltaX) > minPanDistance) {
+        // Disable vertical pan to allow scrolling
+        hammertime.get('pan').set({
+          direction: Hammer.DIRECTION_HORIZONTAL
+        });
+        
+        var isHorizontalSwipe = false;
+        var startX = 0;
+        var startY = 0;
+        
+        // Track the start of pan to determine if it's horizontal or vertical
+        hammertime.on('panstart', function(event) {
+          startX = event.center.x;
+          startY = event.center.y;
+          isHorizontalSwipe = false;
+        });
+        
+        //Mobile gesture - only respond to significant horizontal movements
+        hammertime.on('panleft panright', function(event) {
+          var deltaX = Math.abs(event.deltaX);
+          var deltaY = Math.abs(event.deltaY);
+          
+          // Only proceed if horizontal movement is significantly more than vertical
+          if (deltaX > 30 && deltaX > deltaY * 2) {
+            isHorizontalSwipe = true;
+            event.preventDefault(); // Prevent scrolling when swiping horizontally
+            
+            if (event.type === 'panleft') {
+              swipeLeft(event, $card);
+            } else {
+              swipeRight(event, $card);
+            }
+          }
+        });
+        
+        // Use swipe events for definitive swipes
+        hammertime.on('swipeleft', function(event) {
+          var deltaX = Math.abs(event.deltaX);
+          var deltaY = Math.abs(event.deltaY);
+          
+          if (deltaX > deltaY * 1.5) { // Ensure it's primarily horizontal
+            event.preventDefault();
             swipeLeft(event, $card);
           }
         });
         
-        hammertime.on('panright', function(event) {
-          if (Math.abs(event.deltaX) > minPanDistance) {
+        hammertime.on('swiperight', function(event) {
+          var deltaX = Math.abs(event.deltaX);
+          var deltaY = Math.abs(event.deltaY);
+          
+          if (deltaX > deltaY * 1.5) { // Ensure it's primarily horizontal
+            event.preventDefault();
             swipeRight(event, $card);
           }
         });
         
-        // 
-        hammertime.on('swipeleft', function(event) {
-          swipeLeft(event, $card);
-        });
-        
-        hammertime.on('swiperight', function(event) {
-          swipeRight(event, $card);
-        });
-        
         hammertime.on('panend', function(event) {
-          // trigger large movement
-          if (Math.abs(event.deltaX) > minPanDistance) {
+          // Only trigger swipe end if it was a horizontal swipe
+          if (isHorizontalSwipe && Math.abs(event.deltaX) > 30) {
             swipeEnded(event, false, $card);
           } else {
-            // Reset card pos
+            // Reset card position for vertical movements/taps
             $card.css({
               'transform': 'translate(0, 0) rotate(0)',
             });
           }
+          isHorizontalSwipe = false;
         });
       });
       
+
+          
         
         /*Mobile gesture
         hammertime.on('panleft swipeleft', function(event) {
