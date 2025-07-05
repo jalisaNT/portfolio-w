@@ -106,17 +106,17 @@ $(function(){
           //Add hammer events on element
           hammertime = new Hammer(element);
 
-           // Configure Hammer.js to be less sensitive and only respond to horizontal movements
+           //less sensitive effect
         hammertime.get('pan').set({
           direction: Hammer.DIRECTION_HORIZONTAL,
-          threshold: 30, // Increased threshold - more distance needed before pan starts
+          threshold: 30, // more distance needed to begin swipe 
           velocity: 0.2 // Minimum velocity
         });
         
         hammertime.get('swipe').set({
           direction: Hammer.DIRECTION_HORIZONTAL,
           threshold: 60, // Increased threshold for swipe
-          velocity: 0.4 // Higher velocity requirement for swipe
+          velocity: 0.4 // Higher velocity 
         });
         
         // Disable vertical pan to allow scrolling
@@ -128,22 +128,19 @@ $(function(){
         var startX = 0;
         var startY = 0;
         
-        // Track the start of pan to determine if it's horizontal or vertical
         hammertime.on('panstart', function(event) {
           startX = event.center.x;
           startY = event.center.y;
           isHorizontalSwipe = false;
         });
         
-        //Mobile gesture - only respond to significant horizontal movements
         hammertime.on('panleft panright', function(event) {
           var deltaX = Math.abs(event.deltaX);
           var deltaY = Math.abs(event.deltaY);
           
-          // Only proceed if horizontal movement is significantly more than vertical
           if (deltaX > 30 && deltaX > deltaY * 2) {
             isHorizontalSwipe = true;
-            event.preventDefault(); // Prevent scrolling when swiping horizontally
+            event.preventDefault(); //Stop scrolling when swiping horizontally
             
             if (event.type === 'panleft') {
               swipeLeft(event, $card);
@@ -153,12 +150,12 @@ $(function(){
           }
         });
         
-        // Use swipe events for definitive swipes
+        
         hammertime.on('swipeleft', function(event) {
           var deltaX = Math.abs(event.deltaX);
           var deltaY = Math.abs(event.deltaY);
           
-          if (deltaX > deltaY * 1.5) { // Ensure it's primarily horizontal
+          if (deltaX > deltaY * 1.5) { //horizontal
             event.preventDefault();
             swipeLeft(event, $card);
           }
@@ -168,18 +165,18 @@ $(function(){
           var deltaX = Math.abs(event.deltaX);
           var deltaY = Math.abs(event.deltaY);
           
-          if (deltaX > deltaY * 1.5) { // Ensure it's primarily horizontal
+          if (deltaX > deltaY * 1.5) {
             event.preventDefault();
             swipeRight(event, $card);
           }
         });
         
         hammertime.on('panend', function(event) {
-          // Only trigger swipe end if it was a horizontal swipe
+          //  trigger if horizontal swipe
           if (isHorizontalSwipe && Math.abs(event.deltaX) > 30) {
             swipeEnded(event, false, $card);
           } else {
-            // Reset card position for vertical movements/taps
+            // Reset card pos
             $card.css({
               'transform': 'translate(0, 0) rotate(0)',
             });
@@ -189,24 +186,11 @@ $(function(){
       });
       
 
-          
-        
-        /*Mobile gesture
-        hammertime.on('panleft swipeleft', function(event) {
-          swipeLeft(event, $card);
-        });
-        hammertime.on('panright swiperight', function(event) {
-          swipeRight(event, $card);
-        });
-        hammertime.on('panend', function(event) {
-          swipeEnded(event, false, $card);
-        });
-      });*/
-      
+    
       //Btn controls
       $('.js-left-trigger').off('click').on('click', function(event) { //Detach event listeners no doubles on click events . Remove click handle before add new ones
         var $topCard= $('.swipe-effect').last();
-        open_email("You thought you had a choice ... Get in Touch Still");
+        open_email("... Get in Touch Still");
         swipeEnded(event, 'left', $topCard);
       });
       $('.js-right-trigger').off('click').on('click', function(event) {
