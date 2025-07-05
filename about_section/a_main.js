@@ -20,6 +20,7 @@ $(function(){
       //deltaThreshold is the swipe distance from the initial place of the card
       deltaThreshold = 100, 
       deltaX = 0;
+      minPanDistance = 10; // Threshold for when card  move when a distance is exceeded 
 
     function swipeEnded(event, direction, $card) {
       var  directionFactor,
@@ -77,22 +78,25 @@ $(function(){
       var transform;
       deltaX = event.deltaX;
       
-      transform = 'translate(' + deltaX * 0.8 + 'px, 0) rotate(-25deg)';
-      //translate the card on swipe
-      $card.css({
-        'transform': transform,
-      });
-      
+      if (Math.abs(deltaX) > minPanDistance) {
+        transform = 'translate(' + deltaX * 0.8 + 'px, 0) rotate(-25deg)';
+        //translate the card on swipe
+        $card.css({
+          'transform': transform,
+        });
+      }
     }
 
     function swipeRight(event, $card) {
       var transform;
       deltaX = event.deltaX;
-      transform = 'translate(' + deltaX * 0.8 + 'px, 0) rotate(25deg)';
-      //translate the card on swipe
-      $card.css({
-        'transform': transform,
-      });
+      if (Math.abs(deltaX) > minPanDistance) {
+        transform = 'translate(' + deltaX * 0.8 + 'px, 0) rotate(25deg)';
+        //translate the card on swipe
+        $card.css({
+          'transform': transform,
+        });
+      }
     }
 
     //Events
@@ -101,8 +105,57 @@ $(function(){
         var $card = $(element),
           //Add hammer events on element
           hammertime = new Hammer(element);
+
+          // Configure Hammer.js to be less sensitive to small movements
+        hammertime.get('pan').set({
+          direction: Hammer.DIRECTION_HORIZONTAL,
+          threshold: minPanDistance, // Minimum distance before pan starts
+          velocity: 0.1 // Minimum velocity
+        });
         
-        //Mobile gesture
+        hammertime.get('swipe').set({
+          direction: Hammer.DIRECTION_HORIZONTAL,
+          threshold: 50, // Minimum distance for swipe
+          velocity: 0.3 // Minimum velocity for swipe
+        });
+        
+        //Mobile gestures
+        hammertime.on('panleft', function(event) {
+          if (Math.abs(event.deltaX) > minPanDistance) {
+            swipeLeft(event, $card);
+          }
+        });
+        
+        hammertime.on('panright', function(event) {
+          if (Math.abs(event.deltaX) > minPanDistance) {
+            swipeRight(event, $card);
+          }
+        });
+        
+        // 
+        hammertime.on('swipeleft', function(event) {
+          swipeLeft(event, $card);
+        });
+        
+        hammertime.on('swiperight', function(event) {
+          swipeRight(event, $card);
+        });
+        
+        hammertime.on('panend', function(event) {
+          // trigger large movement
+          if (Math.abs(event.deltaX) > minPanDistance) {
+            swipeEnded(event, false, $card);
+          } else {
+            // Reset card pos
+            $card.css({
+              'transform': 'translate(0, 0) rotate(0)',
+            });
+          }
+        });
+      });
+      
+        
+        /*Mobile gesture
         hammertime.on('panleft swipeleft', function(event) {
           swipeLeft(event, $card);
         });
@@ -112,7 +165,7 @@ $(function(){
         hammertime.on('panend', function(event) {
           swipeEnded(event, false, $card);
         });
-      });
+      });*/
       
       //Btn controls
       $('.js-left-trigger').off('click').on('click', function(event) { //Detach event listeners no doubles on click events . Remove click handle before add new ones
