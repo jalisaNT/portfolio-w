@@ -100,6 +100,7 @@ $(function(){
     }
 
     //Events
+    //Ignore vertical scrolling on mobile
     function doing(){
       $('.swipe-effect').each(function(index, element) {
         var $card = $(element),
