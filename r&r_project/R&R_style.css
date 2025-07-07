@@ -76,7 +76,7 @@ h2,h3{
   width: 100%;
   margin: 0 auto;
   padding: 0;
-  overflow-x: hidden;
+  
 }
 
 /* Modified text styling to reduce gaps */
@@ -307,17 +307,18 @@ h2,h3{
   max-width: 100%; 
   height: auto;
   flex: 1;
-  min-width: 500px;
+  object-fit: cover;
   width: 1020px;
   height: 640px;
+  
 }
 
 #micro-garden{
   max-width: 100%;
   height: auto;
-  object-fit: contain;
+  object-fit:contain;
   margin: auto;
-  width: 500px;
+  width: 400px;
   height: 520px;
 }
 

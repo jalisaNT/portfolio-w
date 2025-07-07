@@ -253,6 +253,7 @@
   #me {
     transform: translateX(10%);
     max-width: 80%;
+    clip-path: circle(41%);
   }
   
   #mini-icons {

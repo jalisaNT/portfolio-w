@@ -182,7 +182,7 @@ button.row {
   flex-direction:column;
   justify-content: center;
   /*border: 2px dotted rgb(51, 86, 45); */
-  padding: 20px;
+  padding: 2px;
   /* Reset any Bootstrap row margins */
   width: 100%;
 
