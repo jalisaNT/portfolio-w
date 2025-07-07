@@ -8,7 +8,7 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 
 
 renderer.outputColorSpace = THREE.SRGBColorSpace;  // tends be default of models colorspacing
-renderer.setSize(window.innerWidth/1.5, window.innerHeight/1.5);
+renderer.setSize(window.innerWidth/2, window.innerHeight/2);
 renderer.toneMapping = 0;
 renderer.toneMappingExposure = 1;
 renderer.toneMapping = THREE.NoToneMapping;
