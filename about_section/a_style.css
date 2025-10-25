@@ -6,6 +6,10 @@
   padding-top: 60px; /* Space for fixed navbar 
 }*/
 
+*{
+  cursor: default;
+}
+
 .container{
   overflow: visible;
   margin-bottom: 50px;
@@ -24,7 +28,8 @@
   background-color: white;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 300;
   transition: all 0.3s ease;
 }
 
@@ -40,7 +45,7 @@
   position:static;
   z-index: 1;
   width: 100%;
-  margin-top: 30%;
+
 }
 
 #l-btn {
@@ -182,30 +187,21 @@
   margin-top:-5px;
   line-height: 1.6;
   font-size: 16px;
+  font-size: 18px;
+  font-weight: 300;
   color: #333;
   
 }
 
 /* Responsive Design */
 @media only screen and (max-width: 1200px) {
-  .card {
-    width: 60%;
-  }
-  .container {
-    padding-top: 80px;
-  }
+  
 
-  .organisation button{
-      margin-top: 40px;
-    
-  }
 
 }
 
 @media only screen and (max-width: 1000px) {
-  .card {
-    width: 80%;
-  }
+ 
 
   #indicate {
     display: none;
@@ -214,10 +210,11 @@
   .organisation {
     position:static;
     left: 0;
-    top: 70px;
+   
     width: 100%;
-    padding: 0 20px;
+    padding: 0 10px;
     z-index: 4;
+    margin-top: -40px;
     
     
   }
@@ -230,13 +227,13 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   .card {
-    width: 90%;
+    width:25em
   }
-
+  
   #me {
-    transform: translateX(20%);
+    transform: translateX(10%);
   }
   
   #name-title {
@@ -247,14 +244,23 @@
   #mini-icons {
     gap: 3rem;
   }
+
+  .organisation {
+    margin-top: 40px;
+  }
 }
+/*
+  #me {
+    transform: translateX(20%);
+  }*/
 
 @media only screen and (max-width: 500px) {
   #me {
-    transform: translateX(10%);
+    
     max-width: 80%;
     clip-path: circle(41%);
   }
+
   
   #mini-icons {
     flex-direction: column;

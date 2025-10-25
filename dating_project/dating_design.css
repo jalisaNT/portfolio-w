@@ -1,5 +1,9 @@
 @import url(../r&r_project/R&R_style.css);
 
+ul li{
+  background-color: aqua;
+}
+
 #left-side {
   max-width: 60%;
   height: auto;
@@ -23,6 +27,9 @@
 
 .intro-container{
   border: 2px dotted rgb(86, 45, 65); 
+  position: relative;
+  
+  
 }
 
 .image-grid {
@@ -51,7 +58,7 @@
   padding: 10px;
   background: #f8f8f8;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -73,10 +80,17 @@
     max-width: 100%;
   }
 
-  
-
-  
+  .intro-container{
+    top: -100px;
+  }
 }
+
+@media screen and (max-width: 900px) {
+  .intro-container{
+    top: 0px;
+  }
+}
+
 @media (max-width: 768px) {
   .image-grid {
     grid-template-columns: repeat(2, 1fr);

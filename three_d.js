@@ -46,7 +46,7 @@ const loader = new GLTFLoader().setPath('public/text/');
 loader.load('version.glb', async function (gltf)  {
   //model
   const mesh = gltf.scene;
-  mesh.position.set(0,-2,0);
+  mesh.position.set(0,-3,0);
   mesh.scale.set(1.1,1.5,1.5);  /*NoteToSelf:  potentially change when add animation landing page actaul one */
   scene.add(mesh);
 

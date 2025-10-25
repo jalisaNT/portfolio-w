@@ -1,5 +1,9 @@
 @import url(../r&r_project/R&R_style.css);
 
+*{
+  cursor: default;
+}
+
 #tools, #time, #category{
   color: rgb(72, 90, 211)
 }
@@ -19,7 +23,9 @@
 }
 
 
-
+ul li{
+ box-shadow: none;
+}
 
 @media screen and (max-width: 1200px) {
   #article-imgs{

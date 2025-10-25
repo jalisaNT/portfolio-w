@@ -3,25 +3,26 @@
 *{
   line-height: 1.6;
   box-sizing: border-box;
+  font-weight: 300;
 }
 
 h1{
-  font-size: clamp(32px, 5vw, 60px);
+  font-size: clamp(22px, 5vw, 35px);
   width: 100%;
-  font-weight: 600;
+  font-weight: 300;
   word-spacing: -5px;
   margin-top: 20px;
 }
 
 h2,h3{
-  font-weight: 600;
+  font-weight: 400;
   margin-top: 5px;
 }
 
 .main-c{
   padding: 2em;
   margin: 1em;
-  margin-top: 1em;
+  margin-top: 0.3em;
   max-width: 100%;
   
 }
@@ -36,6 +37,8 @@ h2,h3{
   margin: auto;
   margin-bottom: 50px;
   transition: flex-direction 0.3s ease;
+  top: -40px; 
+  
 }
 
 #left-side {
@@ -60,15 +63,15 @@ h2,h3{
   transition: width 0.3s ease, padding 0.3s ease;
 }
 
-#tools, #time, #category{
+#tools{
   color: rgb(34, 66, 50)
 }
 
 #brief{
-  font-size: 1.3em;
-  font-weight: 20;
+  font-size: 18px;
   padding: 0.7em; 
   margin-top: -1em;
+ 
 }
 
 /* Added container styling to limit width to 80% */
@@ -82,10 +85,10 @@ h2,h3{
 /* Modified text styling to reduce gaps */
 #r-r-txt, #txt {
   padding: 0.5em 0; 
-  font-size: 1.3em;
-  font-weight: 200;
+  font-size: 18px;
   width: 100%;
   margin: 0;
+  font-weight: 400;
   
   margin-left: 5px;
 }
@@ -115,6 +118,12 @@ h2,h3{
   max-width: 100em;
   margin: 20px
 }*/
+
+nav, .custom-navbar {
+  box-shadow: none;
+ 
+}
+
 
 /* Enhanced #row-two styling with animations and better visuals */
 #row-two {
@@ -202,7 +211,6 @@ h2,h3{
   right: 15px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 24px;
   color: rgba(51, 86, 45, 0.8);
   background: rgba(255, 255, 255, 0.7);
   width: 30px;
@@ -327,10 +335,13 @@ h2,h3{
   height: auto;
 }
 
+
+
 /* Media queries for responsiveness */
 @media screen and (max-width: 1200px) {
   .intro-container {
     flex-direction: column;
+    /* margin-top: -100px; */
   }
   #left-side {
     width: 60%;
@@ -348,7 +359,7 @@ h2,h3{
     width: 100%;
   }
   #brief, #r-r-txt, #txt {
-    font-size: 1.1em;
+    font-size: 18px;
   }
   #row-one {
     flex-direction: column;
@@ -380,17 +391,28 @@ h2,h3{
   #left-side {
     width: 70%;
   }
+
+  
 }
 
 @media screen and (max-width: 950px) {
   #left-side {
     width: 80%; /* Added intermediate step */
   }
+
+   .intro-container {
+    /* margin-top: -80px; */
+  }
+  
 }
 
 @media screen and (max-width: 900px) {
   #left-side {
     width: 90%;
+  }
+
+  .intro-container {
+    margin-top: 0px;
   }
 }
 

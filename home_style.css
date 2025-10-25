@@ -1,10 +1,58 @@
 /*understanding of format FOR ME*/
 
+@font-face{
+  font-family: "Overpass", sans-serif;
+  font-family: "Tuffy", sans-serif;
+  font-family: "BBH Sans Bogle", sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&family=Cal+Sans&family=Overpass:ital,wght@0,100..900;1,100..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Tuffy:ital,wght@0,400;0,700;1,400;1,700&display=swap')
+}
+
+/* CURSOR */
+/* body{
+  cursor: none;
+} */
+
+.cursor{
+  width:4em;
+  height: 4em;
+  display: block;
+  position: fixed;
+  z-index: 2000;
+  pointer-events: none;
+ 
+  transition: opacity 0.15s ease-out, transform 0.1s ease-out;
+}
+
+.select{
+  width:2em;
+  height: 2em;
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  pointer-events: none;
+  
+  transition: opacity 0.15s ease-out, transform 0.1s ease-out;
+
+}
+
+
+
+*{
+    font-weight: 300;
+    box-sizing: border-box;
+    font-family: "Overpass";
+    cursor:none;
+
+}
+
 button{
   text-align: none;
   justify-content: none;
-  color: #000;
+  color: #000000;
+  
+  
 }
+
 
 /* Navigation  */
 
@@ -12,7 +60,14 @@ button{
   position: absolute;
   color: #000;
   text-decoration: none;
-  
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 5px rgb(233, 157, 157); 
+  border-radius: 5px;
+  width: 4em;
+  height: 40px;
+  text-align:center;
+  vertical-align: middle;
+  line-height: 40px;  
 }
 
 .nav-toggle {
@@ -31,11 +86,21 @@ button{
 nav, .custom-navbar {
   margin: 0;
   display: flex;
-  align-items: center;
+  
   justify-content:space-between;
   width: 100%;
-  padding: 30px; 
-  
+  padding-left: 20px; 
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: transparent;
+
+}
+
+.additional{
+  background: #fdfdfd;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.1) ;
+  transition: box-shadow 0.2s ease;
 }
 
 .custom-navbar{
@@ -59,42 +124,66 @@ nav, .custom-navbar {
   display: flex;
 }
 
+
 ul li {
   display: inline-block;
   margin: 20px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 5px rgb(233, 157, 157); 
+  border-radius: 5px;
+  height: 40px;
 }
 
 .top-links a {
   text-decoration: none;
   color: #000;
   font-weight: 200;
-  font-size: 25px;
+  font-size: 18px;
   padding: 10px;
   display: block;
 }
 
 /* Section Styling */
-.section {
-  width: 100%;
-  /*min-height: 500px; */
-  position: relative;
-  overflow: hidden;
-  overflow-y: auto;
+.section-z {
+ overflow: hidden;
+  height: 95vh;
+  min-height: 58rem;
+  max-height: 96rem;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.section-center {
+#change{
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  max-width: 93rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/*.section-center {
   width: 90vw;
   margin: 0 auto;
   max-width: 1170px;
-}
+}*/
 
 /* Landing page */
 .home-title {
+  
   font-weight: 600;
   font-size: 100px;
   position: relative;
   padding-top: 20vh;
-  margin-left: 50px;
+  margin-left: 15px;
+
+  
 }
 
 #below-title {
@@ -109,7 +198,7 @@ ul li {
   top: 50%;
   left: 50%;  
   /* 0 , -50% , min-width: 200px;*/
-  transform: translate(0%, -70%); 
+  transform: translate(0%, -50%); 
   object-fit: cover;
   flex: 1;
   
@@ -119,21 +208,22 @@ ul li {
 
 /* Short intro */
 #intro-txt {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 300;
   line-height: 1.8;
-  float: right;
-  max-width: 40%;
-  
-  margin-right: 50px;
+  max-width: 60%;
+  flex: 1;
+  letter-spacing: 2px;
+  font-family: Tuffy;
 }
 
 
 #description {
+  max-width: 45%;
   flex: 1;
-  max-width: 50%;
+  width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 
@@ -151,6 +241,16 @@ h2 {
   padding: 20px;
 }
 
+#placement{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 150px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
 
 /* Work Section */
 #work-section {
@@ -162,6 +262,7 @@ h2 {
   grid-template-rows: repeat(2, auto); /* Creates 2 rows that size to content */
   gap: 30px; /* Space between grid items */
   width: 100%;
+  
 
 }
 
@@ -176,9 +277,6 @@ button.row {
   margin: 0;
   
   text-align: left;
-
-
-
   display: flex;
   flex-direction:column;
   justify-content: center;
@@ -201,7 +299,7 @@ button.row .side a::after {
   position: absolute;
   width: 0;
   height: 1px;
-  bottom: -2px;
+  bottom: 4px;
   left: 0;
   background-color: rgb(51, 86, 45); /* Same as your #line color */
   transition: width 0.3s ease;
@@ -251,7 +349,7 @@ a{
 
 .side p {
   margin: 0 0 15px 0;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 2%;
   font-weight: 100;
 }
@@ -275,12 +373,14 @@ a{
   justify-content: center;
   align-items: center;
   padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
   
 }
 
 i, label{
-  font-size: 30px;
-  padding: 10px;
+  font-size: 18px;
+  padding-left: 10px;
   cursor: pointer;
   color: #000;
 }
@@ -296,8 +396,10 @@ footer {
 
 #footer_txt {
   margin-right: 20px;
-  font-size: 30px;
+  font-size: 18px;
   font-weight: 400;
+  margin-top: 5px;
+  
 }
 
 /* when the window gets smaller stop the hover animation */ 
@@ -322,58 +424,101 @@ footer {
 @media only screen and (max-width: 1150px) {
   .home-title {
     font-size: 85px;
+    padding-top: 15vh;
   }
+
+  #intro-txt{
+    font-size:16px;
+  }
+
 }
 
 @media only screen and (max-width: 1000px) {
   .home-title {
     font-size: 80px;
   }
+
 }
 
 @media only screen and (max-width: 950px) {
   .home-title {
     font-size: 75px;
   }
+  #below-title {
+    font-size: 35px;
+  }
+
+
+
 }
 
 /*Entire page responsive design */
 @media only screen and (max-width: 900px) {
+
+
   #homepage{
     position: relative;
+   
+  background-color: none;
+  box-shadow: none; 
   }
+  
+  #change {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    padding-top: 180px;
+  }
+  
+  .container {
+    order: 1;
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 30px;
+  }
+  
   .home-title {
+    order: 2;
     font-size: 65px;
-    top: 100px;
+    padding-top: 0;
+    margin-left: 0;
+    text-align: center;
   }
   
   #below-title {
     font-size: 30px;
   }
 
-  #intro-txt {
-    width: 100%;
-    font-size: 25px;
-    margin: auto;
-    float: none;
-    max-width: 90%;
-    margin-top: 100px;
-    line-height: 1.6;
-  }
-
   #intro_ani {
-    order: -1; /* Pushes the model above the text */
-    width: 80%;
-    text-align: center;
-    margin-bottom: 20px;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   #intro_ani canvas {
-    width: 70% !important;
+    width: 40% !important;
     height: auto !important;
-    max-width: 450px;
-    margin: auto;
-    top: 130px;
+    position: relative !important;
+    top: -10px !important;
+    left: 0 !important;
+    transform: none !important;
+  }
+
+  #intro-txt {
+    width: 100%;
+    font-size: 18px;
+    max-width: 100%;
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  #placement {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 30px;
   }
 
  
@@ -396,6 +541,7 @@ footer {
 
   .nav-toggle {
     display: block;
+     padding-right: 50px; 
   }
 
   .navbar{
@@ -405,6 +551,7 @@ footer {
 
   .custom-navbar {
     margin-bottom: 20px;
+    
     
   }
 
@@ -418,6 +565,7 @@ footer {
     box-shadow: 0px 3px 5px rgba(0,0,0,0.1);
     z-index: 1000;
     
+    
   }
 
   .navbar {
@@ -429,8 +577,18 @@ footer {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding-left: 20px; 
     
   }
+
+  ul li {
+  display: inline-block;
+  margin: 20px;
+  background-color: none;
+  box-shadow: none ;
+  border-radius: 5px;
+  height: 40px;
+}
 
   .show-links {
     height: auto;
@@ -462,12 +620,13 @@ footer {
   }
 
   .section{
-    min-height: 1000px; /*1050*/
+    min-height: 950px; /*1050*/
   }
 
   #work-section {
     grid-template-columns: 1fr; /* Switch to single column on smaller screens */
     width: 100%;
+   
   }
 
   #work-img-dating{
@@ -479,23 +638,23 @@ footer {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .home-title {
-    font-size: 40px;
-    position: relative;
-    top: 12em;
-  }
-  #below-title {
-    font-size: 34px;
+    font-size: 50px;
+    padding-top: 70px;
   }
   
-  #intro_ani {
-    width: 90%;
-    height: 20px;
-    translate: -45%;
+  #below-title {
+    font-size: 25px;
+  }
+  
+  #intro_ani canvas {
+    width: 80% !important;
+    top: 60px;
   }
 
   #M-contacts {
@@ -512,7 +671,6 @@ footer {
 
 
 
-/* Updated */
 
 
 label{
@@ -575,4 +733,3 @@ label{
    transform: translate(30px,-11px) rotatez(45deg);
  
  }
- 
