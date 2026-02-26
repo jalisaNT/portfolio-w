@@ -1,5 +1,3 @@
-//Fix later : when swipe and mail app is open no longer open email. want email to display alwys despit app being open, cuurently opens link to app
-// Fix the card so when hold over card then can move the card instead of the touching the page 
 $(function(){
   $(".container-fluid").load("../shorthands/index.html", function() {
 
